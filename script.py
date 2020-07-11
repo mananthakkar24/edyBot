@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer as cbt
-from chatterbot_corpus import *
+#from chatterbot import ChatBot
+#from chatterbot.trainers import ChatterBotCorpusTrainer as cbt
+#from chatterbot_corpus import *
 from webscrap import web_scraping
 from advanceBOT import chat
 

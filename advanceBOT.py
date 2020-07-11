@@ -70,13 +70,16 @@ def bot_response(user_input):
     return bot_response
 
 exit_list = ['bye','thanks bye','quit','break','Bye']
+fictional_list = ["chintu",'mintu',"chintu mintu"]
 
 #while(True):
 def chat(userText):
     user_input = userText
     if user_input.lower() in exit_list:
-        print("Phir Miltey Hain, Alvida")
+        return("Phir Miltey Hain, Alvida")
         #break
+    elif user_input.lower() in fictional_list:
+        return("Chintu Mintu are the fictional characters created by Manish Hurkat Sir for educational purposes")
     else:
         if greeting(user_input) != None:
             #print("edyBot: ",greeting(user_input))
