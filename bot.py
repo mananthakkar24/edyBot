@@ -7,8 +7,8 @@ import numpy as np
 import random
 import string # to process standard python strings
 
-f=open('nlp python answer finals.txt','r',errors = 'ignore')
-m=open('modules pythons.txt','r',errors = 'ignore')
+f=open('./data/nlp python answer finals.txt','r',errors = 'ignore')
+m=open('./data/modules pythons.txt','r',errors = 'ignore')
 checkpoint = "./chatbot_weights.ckpt"
 #session = tf.InteractiveSession()
 #session.run(tf.global_variables_initializer())
@@ -77,7 +77,7 @@ def IntroduceMe(sentence):
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
+user_response = "bye"
 # Generating response
 def response(user_response):
     robo_response=''
@@ -124,29 +124,29 @@ def chat(user_response):
     if(user_response!='bye'):
         if(user_response=='thanks' or user_response=='thank you' ):
             flag=False
-            #print("ROBO: You are welcome..")
-            return "You are welcome.."
+            print("ROBO: You are welcome..")
+            #return "You are welcome.."
         elif(basicM(user_response)!=None):
             return basicM(user_response)
         else:
             if(user_response.find(keyword) != -1 or user_response.find(keywordone) != -1 or user_response.find(keywordsecond) != -1):
-                #print("ROBO: ",end="")
-                #print(responseone(user_response))
-                return responseone(user_response)
+                print("ROBO: ",end="")
+                print(responseone(user_response))
+                #return responseone(user_response)
                 sent_tokensone.remove(user_response)
             elif(greeting(user_response)!=None):
-                #print("ROBO: "+greeting(user_response))
-                return greeting(user_response)
+                print("ROBO: "+greeting(user_response))
+                #return greeting(user_response)
             elif(user_response.find("your name") != -1 or user_response.find(" your name") != -1 or user_response.find("your name ") != -1 or user_response.find(" your name ") != -1):
                 return IntroduceMe(user_response)
             elif(basic(user_response)!=None):
                 return basic(user_response)
             else:
-                #print("ROBO: ",end="")
-                #print(response(user_response))
-                return response(user_response)
+                print("ROBO: ",end="")
+                print(response(user_response))
+                #return response(user_response)
                 sent_tokens.remove(user_response)  
     else:
         flag=False
-        #print("ROBO: Bye! take care..")
-        return "Bye! take care.."
+        print("ROBO: Bye! take care..")
+        #return "Bye! take care.."
