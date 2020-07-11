@@ -145,8 +145,7 @@ def chat(user_response):
                 #print("ROBO: ",end="")
                 #print(response(user_response))
                 return response(user_response)
-                sent_tokens.remove(user_response)
-                
+                sent_tokens.remove(user_response)  
     else:
         flag=False
         #print("ROBO: Bye! take care..")
