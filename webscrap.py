@@ -55,10 +55,15 @@ def web_scraping(userText):
         answer = "Sorry. I could not find the desired results."
     if answer=="Sorry. I could not find the desired results.":
         #print(answer)
-        return(answer)
+        return clean(answer)
     else:
-        return(answer)
+        return clean(answer)
         #print("I found this on the web: ",answer)
+
+def clean(ans):
+    x = re.compile(r'\[[0-9]\]|Wikipedia|\...')
+    print(x.sub('',ans))
+
 
 if __name__ == "__main__":
     web_scraping()
