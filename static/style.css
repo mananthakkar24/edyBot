@@ -17,26 +17,35 @@ h3 {
 #chatbox {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 55%;
     margin-top: 60px;
 }
 #userInput {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 55%;
     margin-top: 60px;
 }
 #textInput {
-    width: 87%;
+    width: 90%;
     border: none;
     border-bottom: 3px solid #009688;
     font-family: monospace;
     font-size: 17px;
 }
+
 #buttonInput {
-    padding: 3px;
+    padding: 8px;
     font-family: monospace;
     font-size: 17px;
+    border-radius: 10px;
+
+}
+#buttonInput:hover{
+    background-color: rgb(63, 60, 60);
+    color: white;
+    transition: 0.8s;
+    cursor: pointer;
 }
 .userText {
     color: white;
@@ -44,6 +53,10 @@ h3 {
     font-size: 17px;
     text-align: right;
     line-height: 30px;
+}
+
+.userText:hover{
+    font-weight: bold;
 }
 .userText span {
     background-color: #009688;
@@ -58,8 +71,11 @@ h3 {
     text-align: left;
     line-height: 30px;
 }
+.botText:hover{
+    font-weight: bold;
+}
 .botText span {
-    background-color: #EF5350;
+    background-color: #dd5c5c;
     padding: 10px;
     border-radius: 2px;
 }

@@ -1,6 +1,7 @@
 from threading import Thread
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def web_scraping(userText):
     qs = userText
@@ -61,8 +62,8 @@ def web_scraping(userText):
         #print("I found this on the web: ",answer)
 
 def clean(ans):
-    x = re.compile(r'\[[0-9]\]|Wikipedia|\...')
-    print(x.sub('',ans))
+    x = re.compile(r'\[[0-9]\]|Wikipedia')
+    return(x.sub('',ans))
 
 
 if __name__ == "__main__":
