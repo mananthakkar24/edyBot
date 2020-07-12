@@ -7,7 +7,6 @@ import nltk
 import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
-
 #nltk.download("punkt",quiet=True)
 
 article = Article("https://www.niituniversity.in/why-nu")
@@ -15,9 +14,6 @@ article.download()
 article.parse()
 article.nlp()
 corpus = article.text
-
-#print(corpus)
-
 text = corpus
 sentence_list = nltk.sent_tokenize(text)
 
@@ -72,7 +68,6 @@ def bot_response(user_input):
 exit_list = ['bye','thanks bye','quit','break','Bye']
 fictional_list = ["chintu",'mintu',"chintu mintu"]
 
-#while(True):
 def chat(userText):
     user_input = userText
     if user_input.lower() in exit_list:
