@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 
 #nltk.download("punkt",quiet=True)
 
-article = Article("https://www.niituniversity.in/programmes/b-tech/computer-science-and-engineering")
+article = Article("https://www.niituniversity.in/why-nu")
 article.download()
 article.parse()
 article.nlp()
@@ -56,7 +56,7 @@ def bot_response(user_input):
     
     j = 0
     for i in range(len(index)):
-        if similarity_scores_list[index[i]] > 0.0:
+        if similarity_scores_list[index[i]] > 0.2:
             bot_response = bot_response+' '+sentence_list[index[i]]
             response_flag = 1
             j = j+1
