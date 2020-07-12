@@ -9,13 +9,17 @@ import warnings
 warnings.filterwarnings("ignore")
 #nltk.download("punkt",quiet=True)
 
-article = Article("https://www.niituniversity.in/why-nu")
-article.download()
-article.parse()
-article.nlp()
-corpus = article.text
-text = corpus
-sentence_list = nltk.sent_tokenize(text)
+def articleFunction(url = "https://www.niituniversity.in/why-nu"):
+
+    article = Article(url)
+    article.download()
+    article.parse()
+    article.nlp()
+    corpus = article.text
+    text = corpus
+    sentence_list = nltk.sent_tokenize(text)
+
+    return sentence_list
 
 def greeting(text):
     text=text.lower()
@@ -39,10 +43,15 @@ def index_sort(list_var):
                 list_index[j] = temp
     return list_index
 
-def bot_response(user_input):
+def bot_response(user_input,sentence):
     user_input = user_input.lower()
+
+
+    sentence_list = sentence
+    #print(sentence_list)
     sentence_list.append(user_input)
     bot_response = ''
+
     cm = CountVectorizer().fit_transform(sentence_list)
     similarity_scores = cosine_similarity(cm[-1],cm)
     similarity_scores_list = similarity_scores.flatten()
@@ -68,7 +77,7 @@ def bot_response(user_input):
 exit_list = ['bye','thanks bye','quit','break','Bye']
 fictional_list = ["chintu",'mintu',"chintu mintu"]
 
-def chat(userText):
+def chat(userText,sentence):
     user_input = userText
     if user_input.lower() in exit_list:
         return("Phir Miltey Hain, Alvida")
@@ -81,4 +90,4 @@ def chat(userText):
             return greeting(user_input)
         else:
             #print("edyBot: ",bot_response(user_input))
-            return bot_response(user_input)
+            return bot_response(user_input,sentence)

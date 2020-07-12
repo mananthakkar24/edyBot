@@ -11,18 +11,21 @@
     <div id = "chatbox">
     <p class = "botText"></p>
     </div>
+    
     <div id = "userInput">
+    <input id ="urlInput" type ="text" name="userURL" placeholder="Enter URL">
     <input id ="textInput" type ="text" name="msg" placeholder="Message">
     <input id = "buttonInput" type = "submit" value="Send">
     </div>
 <script>
     function getBotResponse(){
         var rawText = $("#textInput").val();
+        var urlText = $("#urlInput").val();
         var userHtml = '<p class = "userText"><span>' + "User: "+ rawText + '</span></p>';
         $("#textInput").val("");
         $("#chatbox").append(userHtml);
         document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
-        $.get("/get", {msg:rawText }).done(function(data) {
+        $.get("/get", {msg:rawText,userURL:urlText }).done(function(data) {
         var botHtml = '<p class ="botText"><span>' +"edyBot: " + data + '</span></p>';
         $("#chatbox").append(botHtml);
         document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
