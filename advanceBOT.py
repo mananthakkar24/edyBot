@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings("ignore")
 #nltk.download("punkt",quiet=True)
 
-def articleFunction(url = "https://www.niituniversity.in/why-nu"):
+def articleFunction(url):
 
     article = Article(url)
     article.download()
@@ -74,7 +74,8 @@ def bot_response(user_input,sentence):
     
     return bot_response
 
-exit_list = ['bye','thanks bye','quit','break','Bye']
+exit_list = ['bye','thanks bye','quit','break','Bye',"thank you"]
+general = ["okay","ok","Okay","k","wow"]
 fictional_list = ["chintu",'mintu',"chintu mintu"]
 
 def chat(userText,sentence):
@@ -84,6 +85,8 @@ def chat(userText,sentence):
         #break
     elif user_input.lower() in fictional_list:
         return("Chintu Mintu are the fictional characters created by Manish Hurkat Sir for educational purposes")
+    elif user_input.lower() in general:
+        return("Okay! Stay Safe, Wear Mask, Ghar Pe Raho")
     else:
         if greeting(user_input) != None:
             #print("edyBot: ",greeting(user_input))

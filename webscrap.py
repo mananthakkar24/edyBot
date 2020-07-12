@@ -61,7 +61,7 @@ def web_scraping(userText):
         #print("I found this on the web: ",answer)
 
 def clean(ans):
-    x = re.compile(r'\[[0-9]*\]|Wikipedia')
+    x = re.compile(r'\[[0-9]*\]|Wikipedia|quora|Quora')
     return(x.sub('',ans))
 
 
